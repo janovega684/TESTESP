@@ -1,0 +1,2 @@
+POLLA="GEORGE HARRIS"
+print(POLLA)
