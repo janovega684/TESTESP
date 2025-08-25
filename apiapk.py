@@ -1,10 +1,21 @@
-def calculadora(numero1, numero2):
+from fastapi import FastAPI
 
-    resultado = numero1 + numero2
+app = FastAPI()
 
-    return resultado
+from untitled import find_students
 
 
-calculadora(2, 120)
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
+@app.get("/PRUEBA")
+async def estudiante(name1: str = None, name2: str = None):
+
+    students = find_students(name1=None, name2=None)
+
+    return students
 
 
